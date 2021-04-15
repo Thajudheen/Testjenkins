@@ -13,4 +13,9 @@ unclassified:
       permissions:
         - "Overall/Administer:admin"
         - "Overall/Read:authenticated"
+  security:
+    queueItemAuthenticator:
+      authenticators:
+      - global:
+          strategy: triggeringUsersAuthorizationStrategy
 unclassified:
