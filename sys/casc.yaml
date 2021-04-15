@@ -9,4 +9,3 @@ unclassified:
        - id: ${JENKINS_ADMIN_ID}
          password: ${JENKINS_ADMIN_PASSWORD}
 unclassified:
-  ...
