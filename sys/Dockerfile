@@ -8,7 +8,10 @@ RUN curl -fsSL https://get.docker.com |VERSION=${DOCKER_VERSION} sh \
  && usermod -aG docker ${USER} \
  && apt-get -y clean \
  && rm -rf /var/lib/apt/lists/* \
- && touch /var/run/docker.sock && chown root.docker /var/run/docker.sock
+ && touch /var/run/docker.sock && chown root.docker /var/run/docker.sock \
+ && usermod -aG docker jenkins \
+ && usermod -aG root jenkins \
+ && chmod 664 /var/run/docker.soc
 
 USER ${USER}
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
