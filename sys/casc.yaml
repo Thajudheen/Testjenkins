@@ -5,5 +5,5 @@ jenkins:
       users:
         # create a user called admin
         - id: "admin"
-          password: "admin"
+          password: "groovy123"
   authorizationStrategy: loggedInUsersCanDoAnything
