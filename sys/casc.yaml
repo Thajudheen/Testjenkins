@@ -1,21 +1,9 @@
-unclassified:
-  location:
-    url: http://learn:8080/
-    jenkins:
+jenkins:
   securityRealm:
     local:
       allowsSignup: false
       users:
-       - id: ${JENKINS_ADMIN_ID}
-         password: ${JENKINS_ADMIN_PASSWORD}
-  authorizationStrategy:
-    globalMatrix:
-      permissions:
-        - "Overall/Administer:admin"
-        - "Overall/Read:authenticated"
-  security:
-    queueItemAuthenticator:
-      authenticators:
-      - global:
-          strategy: triggeringUsersAuthorizationStrategy
-unclassified:
+        # create a user called admin
+        - id: "admin"
+          password: "admin"
+  authorizationStrategy: loggedInUsersCanDoAnything
