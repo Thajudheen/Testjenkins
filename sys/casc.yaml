@@ -1,4 +1,16 @@
 jenkins:
+  clouds:
+  - kubernetes:
+      containerCapStr: "10"
+      jenkinsTunnel: "vm1.example.com:50000"
+      jenkinsUrl: "http://vm1.example.com:8080"
+      maxRequestsPerHostStr: "32"
+      name: "kubernetes"
+      namespace: "jenkins"
+      serverUrl: "https://kubernetes.default"
+      templates:
+      - name: mycompany-base
+        label: mycompany-base 
   securityRealm:
     local:
       allowsSignup: false
