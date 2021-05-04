@@ -16,9 +16,9 @@ jenkins:
   agentProtocols:
   - "JNLP4-connect"
   - "Ping"   
-        templates:
-        - name: mycompany-base
-          label: mycompany-base 
+  templates:
+    - name: mycompany-base
+      label: mycompany-base 
   securityRealm:
     local:
       allowsSignup: false
