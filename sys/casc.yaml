@@ -13,12 +13,12 @@ jenkins:
         retentionTimeout: 300
         connectTimeout: 10
         readTimeout: 20
+        templates:
+        - name: mycompany-base
+          label: mycompany-base 
   agentProtocols:
   - "JNLP4-connect"
-  - "Ping"   
-  templates:
-    - name: mycompany-base
-      label: mycompany-base 
+  - "Ping"  
   securityRealm:
     local:
       allowsSignup: false
