@@ -1,24 +1,24 @@
 jenkins:
   clouds:
-  - kubernetes:
-      name: "kubernetes"
-      serverUrl: "http://10.0.2.15:16443"
-      containerCapStr: "10"
-      jenkinsTunnel: "vm1.example.com:50000"
-      jenkinsUrl: "http://vm1.example.com:8080"
-      maxRequestsPerHostStr: "32"
-      namespace: "jenkins"  
-      containerCapStr: 42
-      maxRequestsPerHostStr: 64
-      retentionTimeout: 300
-      connectTimeout: 10
-      readTimeout: 20
+    - kubernetes:
+        name: "kubernetes"
+        serverUrl: "http://10.0.2.15:16443"
+        containerCapStr: "10"
+        jenkinsTunnel: "vm1.example.com:50000"
+        jenkinsUrl: "http://vm1.example.com:8080"
+        maxRequestsPerHostStr: "32"
+        namespace: "jenkins"  
+        containerCapStr: 42
+        maxRequestsPerHostStr: 64
+        retentionTimeout: 300
+        connectTimeout: 10
+        readTimeout: 20
   agentProtocols:
   - "JNLP4-connect"
   - "Ping"   
-      templates:
-      - name: mycompany-base
-        label: mycompany-base 
+        templates:
+        - name: mycompany-base
+          label: mycompany-base 
   securityRealm:
     local:
       allowsSignup: false
