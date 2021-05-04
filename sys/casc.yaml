@@ -1,13 +1,21 @@
 jenkins:
   clouds:
   - kubernetes:
+      name: "kubernetes"
+      serverUrl: "http://10.0.2.15:16443"
       containerCapStr: "10"
       jenkinsTunnel: "vm1.example.com:50000"
       jenkinsUrl: "http://vm1.example.com:8080"
       maxRequestsPerHostStr: "32"
-      name: "kubernetes"
-      namespace: "jenkins"
-      serverUrl: "https://kubernetes.default"
+      namespace: "jenkins"  
+      containerCapStr: 42
+      maxRequestsPerHostStr: 64
+      retentionTimeout: 300
+      connectTimeout: 10
+      readTimeout: 20
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"   
       templates:
       - name: mycompany-base
         label: mycompany-base 
@@ -19,3 +27,12 @@ jenkins:
         - id: "admin"
           password: "groovy123"
   authorizationStrategy: loggedInUsersCanDoAnything
+  slaveAgentPort: 50000
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - string:
+              scope: GLOBAL
+              id: "github-webhook-secret"
+              secret: "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"
